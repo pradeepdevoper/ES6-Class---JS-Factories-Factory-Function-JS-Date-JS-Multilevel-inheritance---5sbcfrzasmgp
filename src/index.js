@@ -6,9 +6,7 @@ function addition(){
            console.log(result);
        }
        addition(44,56);
-   </script>
    
-   <script>
        var length = 50; //var keyword will attach to this
       // let length = 50; //let will not attach to this keyword
        function display(){
