@@ -1,17 +1,19 @@
-function addition(){
-    console.log(arguments[0]);
-    console.log(arguments[1]);
-    //let result = a + b;
-     let result = arguments[0] + arguments[1];
-     console.log(result);
- }
- addition(44,56);
 
- var length = 50; //var keyword will attach to this
-// let length = 50; //let will not attach to this keyword
- function display(){
-     console.log(this.length);
- }
- display();
- 
- module.exports = { API }
+class API {
+    #secure
+    constructor(url, method = 'GET') {
+        this.url = url
+        this.method = method
+        this.#secure = url.startsWith("https")
+    }
+
+    isSecure() {
+        return this.#secure
+    }
+    updateUrl(url) {
+        this.url = url
+        this.#secure = url.startsWith("https")
+    }
+}
+
+module.exports = { API }
